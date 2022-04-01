@@ -47,7 +47,8 @@ terminal = "alacritty"
 browser = "opera"
 filemanager = "pcmanfm"
 editor = "code"
-launcher = "rofi -show run"
+launcher = "rofi -show drun"
+switcher = "rofi -show window"
 snip = "ksnip --rectarea"
 
 keys = [
@@ -93,10 +94,11 @@ keys = [
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     # Key([mod], "a", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
     Key([mod], "a", lazy.spawn(launcher), desc="Spawn an application using launcher"),
+    Key(["mod1"], "Tab", lazy.spawn(switcher), desc="Switch application"),
     Key([mod, "shift"], "s", lazy.spawn(snip), desc="Use snipping tool"),
 ]
 
-groups = [Group(f"circle{i}", layout="max", label="circle") for i in "123456789"]
+groups = [Group(f"{i}", layout="max", label="circle") for i in "123456789"]
 
 for i, group in enumerate(groups):
     keys.extend(
