@@ -1,0 +1,13 @@
+{
+    "bg": "#1a1b26",
+    "fg": "#ECEFF1",
+    "active": "#ECEFF1",
+    "inactive": "#616464",
+    "border_focus": "#B6BBBB",
+    "border_normal": "#1a1b26",
+    "current_screen_tab": "#ECEFF1",
+    "systray": "#1a1b26",
+    "seperator": "#1a1b26",
+    "colour1": "#00F434",
+    "colour2": "#FF2A14"
+}

@@ -1,0 +1,9 @@
+{
+    "looks": {
+      "caret_font": "Font Awesome 5 Free Solid",
+      "brands_font": "Font Awesome 5 Brands Regular",
+      "main_font": "Ubuntu",
+      "panel-opacity": 1.0,
+      "panel-size": 40
+    }
+}
