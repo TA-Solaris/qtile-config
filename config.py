@@ -300,7 +300,7 @@ def init_widgets_list():
         widget.Clock(
             foreground=colours["fg"],
             background=colours["bg"],
-            format="%a, %b %y %H:%M:%S ",
+            format="%a, %b %d %H:%M:%S ",
             padding = 10
         )
     ]
