@@ -96,6 +96,11 @@ keys = [
     Key([mod], "a", lazy.spawn(launcher), desc="Spawn an application using launcher"),
     Key(["mod1"], "Tab", lazy.spawn(switcher), desc="Switch application"),
     Key([mod, "shift"], "s", lazy.spawn(snip), desc="Use snipping tool"),
+    # Brightness
+    Key([], "XF86MonBrightnessUp", lazy.spawn("brillo -q -A 5")),
+    Key([], "XF86MonBrightnessDown", lazy.spawn("brillo -q -U 5")),
+    # Locking
+    Key(["mod1", "control"], "l", lazy.spawn("dm-tool switch-to-greeter")),
 ]
 
 groups = [Group(f"{i}", layout="max", label="circle") for i in "123456789"]
@@ -234,15 +239,15 @@ def init_widgets_list():
             padding = 0
         ),
         widget.CheckUpdates(
-            update_interval = 1800,
-            distro = "Arch_checkupdates",
-            display_format = "Updates: {updates} ",
+            update_interval = 300,
+            distro = "Arch",
+            display_format = "Updates: {updates}",
             no_update_string = "Up to date",
             foreground=colours["fg"],
             background=colours["bg"],
             colour_have_updates = colours["colour2"],
             colour_no_updates = colours["colour1"],
-            mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(terminal + " -e sudo pacman -Syu")},
+            #mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(terminal + " -e sudo pacman -Syu")},
             padding = 5,
         ),
         widget.Sep(
