@@ -101,6 +101,10 @@ keys = [
     Key([], "XF86MonBrightnessDown", lazy.spawn("brillo -q -U 5")),
     # Locking
     Key(["mod1", "control"], "l", lazy.spawn("dm-tool switch-to-greeter")),
+    # Volume
+    Key([], "XF86AudioRaiseVolume", lazy.spawn("pactl -- set-sink-volume 1 +5%")),
+    Key([], "XF86AudioLowerVolume", lazy.spawn("pactl -- set-sink-volume 1 -5%")),
+    Key([], "XF86AudioMute", lazy.spawn("pactl -- set-sink-mute 1 toggle")),
 ]
 
 groups = [Group(f"{i}", layout="max", label="circle") for i in "123456789"]
